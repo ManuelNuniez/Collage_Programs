@@ -36,6 +36,12 @@ public class ColaEstatica implements ColaTDA {
     public boolean ColaVacia() {
         return (i==99);
     }
+
+    @Override
+    public int Size() {
+        
+        return i;
+    }
     
 
 
