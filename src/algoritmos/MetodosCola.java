@@ -70,7 +70,7 @@ public class MetodosCola {
         
     }
 
-    public static boolean terminanIgual(ColaTDA cola1, ColaTDA cola2){
+    public static boolean TerminanIgual(ColaTDA cola1, ColaTDA cola2){
         boolean terminanIgual=false;
         MetodosCola.InvertirCola(cola1);
         MetodosCola.InvertirCola(cola2);
@@ -79,6 +79,39 @@ public class MetodosCola {
         }
         return terminanIgual;
 
+    }
+
+    public static boolean EsCapicua(ColaTDA cola){
+        boolean esCapicua = true;
+        ColaTDA aux = new ColaDinamica();
+        aux.InicializarCola();
+        MetodosCola.CopiarCola(cola, aux);
+        MetodosCola.InvertirCola(aux);
+        while(esCapicua && !aux.ColaVacia()){
+            if(cola.PrimerElemento()==aux.PrimerElemento()){
+                cola.Desacolar();
+                aux.Desacolar();
+            }
+            else{
+                esCapicua=false;
+            }
+        }
+
+        return esCapicua;
+    }
+
+    public static boolean SonInversas(ColaTDA cola1,ColaTDA cola2){
+        boolean esInversa = true;
+        MetodosCola.InvertirCola(cola2);
+        while(esInversa && !cola1.ColaVacia()){
+            if(MetodosCola.TerminanIgual(cola1, cola2)){
+                cola1.Desacolar();
+                cola2.Desacolar();
+            }else{
+                esInversa=false;
+            }
+        }
+        return esInversa;
     }
 
 
