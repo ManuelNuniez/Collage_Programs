@@ -1,6 +1,6 @@
 import api.PilaTDA;
 import impl.PilaDinamica;
-import algoritmos.metodosPila; 
+import algoritmos.MetodosPila; 
 
 
 public class TP1_TDApila_ej2_C {
@@ -12,8 +12,8 @@ public class TP1_TDApila_ej2_C {
         p1.Apilar(2);
         p1.Apilar(3);
         p1.Apilar(4);
-        metodosPila.InvertirPila(p1);
-        metodosPila.ImprimirPila(p1);
+        MetodosPila.InvertirPila(p1);
+        MetodosPila.ImprimirPila(p1);
     }
     
 }

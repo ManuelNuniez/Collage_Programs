@@ -1,6 +1,6 @@
 import api.PilaTDA;
 import impl.PilaDinamica;
-import algoritmos.metodosPila;
+import algoritmos.MetodosPila;
 
 public class App {
     public static void main(String[] args) throws Exception {
@@ -14,7 +14,7 @@ public class App {
         p1.Apilar(2);   
         p1.Apilar(3);
         p1.Apilar(4);
-        metodosPila.CopiarPila(p1, p2);
+        MetodosPila.CopiarPila(p1, p2);
 
         
         while (!p2.PilaVacia()){

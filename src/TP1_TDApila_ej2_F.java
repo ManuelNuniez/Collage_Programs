@@ -1,5 +1,5 @@
 import api.PilaTDA;
-import algoritmos.metodosPila;
+import algoritmos.MetodosPila;
 import impl.PilaDinamica;
 public class TP1_TDApila_ej2_F {
     public static void main(String[] args) {
@@ -11,7 +11,7 @@ public class TP1_TDApila_ej2_F {
         p1.Apilar(3);
         p1.Apilar(4);
         
-        int promedio= metodosPila.Sumatoria(p1)/metodosPila.ContarElementos(p1);
+        int promedio= MetodosPila.Sumatoria(p1)/MetodosPila.ContarElementos(p1);
         System.out.println("El promedio de los elementos de la pila es: "+promedio);
         
     }

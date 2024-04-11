@@ -1,5 +1,5 @@
 import api.PilaTDA;
-import algoritmos.metodosPila;
+import algoritmos.MetodosPila;
 import impl.PilaDinamica;
 public class TP1_TDApila_ej2_E {
     public static void main(String[] args) {
@@ -10,6 +10,6 @@ public class TP1_TDApila_ej2_E {
         p1.Apilar(2);
         p1.Apilar(3);
         p1.Apilar(4);
-        System.out.println("la sumatoria de los elementos de la pila es igual a: " + metodosPila.Sumatoria(p1));
+        System.out.println("la sumatoria de los elementos de la pila es igual a: " + MetodosPila.Sumatoria(p1));
     }
 }

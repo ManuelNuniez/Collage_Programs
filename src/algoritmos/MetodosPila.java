@@ -2,13 +2,13 @@ package algoritmos;
 
 import api.PilaTDA;
 import impl.PilaDinamica;
-public class metodosPila {
+public class MetodosPila {
 
     public static void InvertirPila(PilaTDA origen){
         PilaTDA aux =new PilaDinamica();
         aux.InicializarPila();
 
-        metodosPila.CopiarPila(origen, aux);
+        MetodosPila.CopiarPila(origen, aux);
 
         while (!origen.PilaVacia()) {
             origen.Desapilar();
@@ -41,8 +41,8 @@ public class metodosPila {
     public static void ImprimirPila(PilaTDA pilaOriginal){
         PilaTDA aux = new PilaDinamica();
         aux.InicializarPila();
-        metodosPila.CopiarPila(pilaOriginal, aux);
-        metodosPila.InvertirPila(aux);
+        MetodosPila.CopiarPila(pilaOriginal, aux);
+        MetodosPila.InvertirPila(aux);
         
         while (!aux.PilaVacia()){
             System.out.println(aux.Tope());
