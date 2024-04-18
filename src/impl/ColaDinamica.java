@@ -46,21 +46,4 @@ public class ColaDinamica implements ColaTDA {
         
     }
 
-
-    @Override
-    public int Size() {
-        int tamaño=0;
-        Nodo aux = new Nodo();
-        aux=Primero;
-        while(aux!=null){
-            tamaño++;
-            aux=aux.sig;
-        }
-
-        return tamaño;
-    }
-
-    
-
-
 }

@@ -6,5 +6,5 @@ public interface ColaTDA {
     void Desacolar();
     int PrimerElemento();
     boolean ColaVacia();
-    int Size();
+
 }
