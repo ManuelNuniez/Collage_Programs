@@ -1,6 +1,6 @@
 package algoritmos;
 import api.ColaPrioridadTDA;
-import impl.ColaPrioridadDinamica;
+
 
 import api.ColaTDA;
 import impl.ColaDinamica;

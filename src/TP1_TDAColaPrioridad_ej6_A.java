@@ -1,6 +1,5 @@
 import api.ColaPrioridadTDA;
 import impl.ColaPrioridadDinamica;
-import algoritmos.MetodosCola;
 import algoritmos.MetodosColaPrioridad;
 
 
