@@ -1,6 +1,4 @@
 package impl;
-
-
 import api.ConjuntoTDA;
 public class ConjuntoEstatico implements ConjuntoTDA {
     int[] vector;
