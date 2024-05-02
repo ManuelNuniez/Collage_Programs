@@ -17,10 +17,16 @@ public class DiccionarioSimpleEstatico implements DiccionarioSimpleTDA {
 
     @Override
     public void Agregar(int clave, int valor) {
-        if(i<100){
+        if(i<100 && !Claves().Pertenece(clave)){
             Claves[i]=clave;
             Valores[i]=valor;
             i++;
+        }else if (Claves().Pertenece(clave)) {
+            int cont=0;
+            while(Claves[cont]!=clave){
+                cont++;
+            }
+            Valores[cont]=valor;    
         }
 
     }

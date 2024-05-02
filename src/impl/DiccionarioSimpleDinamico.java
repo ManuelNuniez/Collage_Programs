@@ -20,13 +20,17 @@ public class DiccionarioSimpleDinamico implements DiccionarioSimpleTDA {
         if (Primero==null) {
             Primero=aux;
             
-        }else if(!Claves().ConjuntoVacio()){
+        }else if(!Claves().Pertenece(clave)){
             
             aux.sig=Primero;
-
             Primero=aux;
+        }else if (Claves().Pertenece(clave)) {
+            aux=Primero;
 
-
+            while (aux.ClaveN!=clave) {
+                aux=aux.sig;
+            }
+            aux.ValorN=valor;
             
         }
     }
@@ -56,8 +60,8 @@ public class DiccionarioSimpleDinamico implements DiccionarioSimpleTDA {
         while (aux.ClaveN!=clave) {
             aux=aux.sig;    
         }
-        int valor;
-        return (valor=aux.ValorN);
+        int valor=aux.ValorN;
+        return valor;
     }
 
     @Override
