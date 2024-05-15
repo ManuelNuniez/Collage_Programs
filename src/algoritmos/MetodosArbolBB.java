@@ -132,7 +132,7 @@ public class MetodosArbolBB {
     public static int CantDeHojas(ArbolBBTDA a){
         if(a.ArbolVacio()){
             return 0;
-        }else if (MetodosArbolBB.EsHoja(a, a.Raiz())){
+        }else if (EsHoja(a, a.Raiz())){
             return (1+ CantDeHojas(a.HijoDer()) + CantDeHojas(a.HijoDer()));
         }else{
             return (CantDeHojas(a.HijoDer()) + CantDeHojas(a.HijoDer()));
@@ -140,11 +140,7 @@ public class MetodosArbolBB {
     }
 
     public static int Altura(ArbolBBTDA a){
-        if(a.ArbolVacio()){
-            return -1;
-        }else{
-            return (1 + Altura(a.HijoDer()) + Altura(a.HijoIzq()));
-        }
+        throw new UnsupportedOperationException("funcion no implementada");
         
     }
     
