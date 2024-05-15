@@ -17,7 +17,7 @@ public class PruebaArbolBB {
         a.AgregarElem(40);
         a.AgregarElem(14);
 
-        System.out.println(MetodosArbolBB.ContarElemEnNivel(a,2));
+        System.out.println(MetodosArbolBB.Altura(a));
 
         
 

@@ -1,5 +1,6 @@
 package algoritmos;
 
+
 import Arbol.ArbolBB;
 import Arbol.ArbolBBTDA;
 import api.ConjuntoTDA;
@@ -139,7 +140,12 @@ public class MetodosArbolBB {
     }
 
     public static int Altura(ArbolBBTDA a){
-        throw new UnsupportedOperationException("funcion no implementada");
+        if(a.ArbolVacio()){
+            return -1;
+        }else{
+            return (1 + Altura(a.HijoDer()) + Altura(a.HijoIzq()));
+        }
+        
     }
     
     public static boolean IgualForma(ArbolBBTDA a,ArbolBBTDA b){
