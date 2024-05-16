@@ -1,7 +1,4 @@
 package algoritmos;
-
-
-import Arbol.ArbolBB;
 import Arbol.ArbolBBTDA;
 import api.ConjuntoTDA;
 import impl.ConjuntoDinamico;
@@ -31,7 +28,7 @@ public class MetodosArbolBB {
         }
     }
 
-    public static int Contar(ArbolBBTDA a){
+    public static int Contar(ArbolBBTDA a){ //cuenta la cantidad de nodods del arbol
         if (a.ArbolVacio()) {
             return 0;
         }
@@ -67,7 +64,7 @@ public class MetodosArbolBB {
         }
     }
     
-    public static ConjuntoTDA nodosPares(ArbolBBTDA a){
+    public static ConjuntoTDA NodosPares(ArbolBBTDA a){
     
         ConjuntoTDA r= new ConjuntoDinamico();
         r.InicializarConjunto();
@@ -76,8 +73,8 @@ public class MetodosArbolBB {
             if (a.Raiz() % 2 == 0){
                 r.Agregar(a.Raiz());
             }
-            ConjuntoTDA rI = nodosPares(a.HijoIzq());
-            ConjuntoTDA rD = nodosPares(a.HijoDer());
+            ConjuntoTDA rI = NodosPares(a.HijoIzq());
+            ConjuntoTDA rD = NodosPares(a.HijoDer());
             while (!rI.ConjuntoVacio()){
                 int x = rI.Elegir();
                 r.Agregar(x);
@@ -142,7 +139,7 @@ public class MetodosArbolBB {
     public static int Altura(ArbolBBTDA a){
         if (a.ArbolVacio()) {
             return 0;
-        }else if (1+ Altura(a.HijoIzq()) > Altura(a.HijoDer())+1){
+        }else if (1+ Altura(a.HijoIzq()) > Altura(a.HijoDer())+1){ //como si fuera la funcion max, comparo que rama tiene mayor altura si la izqu o derecha
             return(1+Altura(a.HijoIzq()));
             
         }else{
@@ -152,22 +149,68 @@ public class MetodosArbolBB {
     }
     
     public static boolean IgualForma(ArbolBBTDA a,ArbolBBTDA b){
-        throw new UnsupportedOperationException("funcion no implementada");
+        if (a.ArbolVacio() && b.ArbolVacio()) {
+            return true;
+        }else if (a.ArbolVacio() || b.ArbolVacio()) {
+            return false;
+        }else{
+            return (IgualForma(a.HijoDer(), b.HijoDer()) && IgualForma(a.HijoIzq(), b.HijoIzq()));
+        }
+        
+
+        
     }
 
     public static boolean ArbolesIguales(ArbolBBTDA a, ArbolBBTDA b){
-        throw new UnsupportedOperationException("funcion no implementada");
+        return (IgualForma(a, b) && Sumatoria(a)==Sumatoria(b));
+
     }
 
     public static int ContarElemEnNivel(ArbolBBTDA a, int nivel){
-        if (a.ArbolVacio()) {
+        if (a.ArbolVacio() || nivel<0) {
             return 0;
-        }else if (MetodosArbolBB.CalcularProfundidad(a, a.Raiz())==nivel){
+        }else if (nivel==0){
             return 1;
         }else{
-            return (ContarElemEnNivel(a.HijoDer(), nivel) + ContarElemEnNivel(a.HijoDer(), nivel));
+            nivel--;
+            return (ContarElemEnNivel(a.HijoDer(), nivel) + ContarElemEnNivel(a.HijoIzq(), nivel));
         }
     }
 
+    public static ConjuntoTDA ElementosMayores(ArbolBBTDA a, int val){
+        ConjuntoTDA conj = new ConjuntoDinamico();
+        conj.InicializarConjunto();
+
+        if (!a.ArbolVacio()){
+            if (a.Raiz() > val){
+                conj.Agregar(a.Raiz());
+            }
+            ConjuntoTDA conjI = ElementosMayores(a.HijoIzq(),val);
+            ConjuntoTDA conjD = ElementosMayores(a.HijoDer(),val);
+
+            while (!conjI.ConjuntoVacio()){
+                int x = conjI.Elegir();
+                conj.Agregar(x);
+                conjI.Sacar(x);
+            }
+            while (!conjD.ConjuntoVacio()){
+                int x = conjD.Elegir();
+                conj.Agregar(x);
+                conjD.Sacar(x);
+            }
+        }
+        return conj;
+    }
+
+    public static int ElementoAnterior(ArbolBBTDA a,int valor){
+        
+        if (a.Raiz()==valor) {
+            return a.Raiz();
+        }else if (ElementoAnterior(a.HijoDer(), valor)==valor || ElementoAnterior(a.HijoIzq(), valor)==valor) {
+            return a.Raiz();
+        }else{
+            return -1;
+        }
+    }
 
 }
