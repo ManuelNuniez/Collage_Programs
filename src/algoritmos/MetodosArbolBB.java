@@ -140,7 +140,14 @@ public class MetodosArbolBB {
     }
 
     public static int Altura(ArbolBBTDA a){
-        throw new UnsupportedOperationException("funcion no implementada");
+        if (a.ArbolVacio()) {
+            return 0;
+        }else if (1+ Altura(a.HijoIzq()) > Altura(a.HijoDer())+1){
+            return(1+Altura(a.HijoIzq()));
+            
+        }else{
+            return (Altura(a.HijoDer())+1);
+        }
         
     }
     
