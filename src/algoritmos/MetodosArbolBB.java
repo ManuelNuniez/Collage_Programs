@@ -1,7 +1,9 @@
 package algoritmos;
+import Arbol.ArbolBB;
 import Arbol.ArbolBBTDA;
 import api.ConjuntoTDA;
 import impl.ConjuntoDinamico;
+import java.math.*;
 
 public class MetodosArbolBB {
     public static void PreOrder(ArbolBBTDA a){
@@ -122,7 +124,6 @@ public class MetodosArbolBB {
         }
         else{
             return (a.Raiz() + Sumatoria(a.HijoDer()) + Sumatoria(a.HijoIzq()));
-
         }
     }
 
@@ -202,15 +203,55 @@ public class MetodosArbolBB {
         return conj;
     }
 
-    public static int ElementoAnterior(ArbolBBTDA a,int valor){
-        
-        if (a.Raiz()==valor) {
+    public static int PadreInmediato(ArbolBBTDA a,int valor){
+        if (a.ArbolVacio()) {
+            return valor;
+        }else if (a.HijoDer().Raiz()==valor || a.HijoIzq().Raiz()==valor) {
             return a.Raiz();
-        }else if (ElementoAnterior(a.HijoDer(), valor)==valor || ElementoAnterior(a.HijoIzq(), valor)==valor) {
-            return a.Raiz();
+        }else if (a.Raiz()>valor){
+            return PadreInmediato(a.HijoIzq(), valor);
         }else{
-            return -1;
+            return PadreInmediato(a.HijoDer(), valor);
+        }
+        
+    }
+
+    private static boolean EncontreHoja(ArbolBBTDA a){//* nos dice si un valor es hoja */
+        if(!a.ArbolVacio()){
+            return a.HijoIzq().ArbolVacio() && a.HijoDer().ArbolVacio();
+        }else{
+            return false;
+        }
+
+    }
+
+    public static void PadreHoja(ArbolBBTDA a){
+
+        if (!a.ArbolVacio()) {
+            if (EncontreHoja(a.HijoIzq()) || EncontreHoja(a.HijoDer())){
+                System.out.println(a.Raiz());
+            }
+
+            PadreHoja(a.HijoDer());
+            PadreHoja(a.HijoIzq());
+            
+        }
+            
+    }
+
+
+    public static void AncestroComun(ArbolBBTDA a,int menor, int mayor){
+        if (a.Raiz() >= menor && a.Raiz() <= mayor) {
+            System.out.println(a.Raiz());
+        }
+        else if (a.Raiz()< menor){
+            AncestroComun(a.HijoDer(), menor, mayor);
+
+        }else if(a.Raiz() > mayor) {
+            AncestroComun(a.HijoIzq(), menor, mayor);
         }
     }
+    
+    
 
 }

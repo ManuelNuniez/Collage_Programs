@@ -3,11 +3,11 @@ package impl;
 import api.PilaTDA;
 
 public class PilaDinamica implements PilaTDA {
-    Nodo primero;
+    Nodo tope;
 
     @Override
     public void InicializarPila() {
-        primero= null;
+        tope= null;
         
     }
 
@@ -15,23 +15,23 @@ public class PilaDinamica implements PilaTDA {
     public void Apilar(int x) {
         Nodo aux= new Nodo();
         aux.info= x;
-        aux.sig = primero;
-        primero =aux;
+        aux.sig = tope;
+        tope =aux;
     }
 
     @Override
     public void Desapilar() {
-        primero= primero.sig;
+        tope= tope.sig;
     }
 
     @Override
     public int Tope() {
-        return(primero.info);
+        return(tope.info);
     }
 
     @Override
     public boolean PilaVacia() {
-        return(primero == null);
+        return(tope == null);
     }
 
 }

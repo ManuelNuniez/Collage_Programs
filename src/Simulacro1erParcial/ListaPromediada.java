@@ -41,20 +41,21 @@ public class ListaPromediada implements ListaPromediadaTDA{
 
     @Override
     public void eliminar(int val) {
-        NodoListaPromediada anterior= Primero;
-        NodoListaPromediada actual= anterior.sig;
-        
-        if (Primero.info==val) {
+        NodoListaPromediada s = Primero;
+        if(Primero.info==val){
             Primero=Primero.sig;
-
+        }else if(Primero.sig.info==val){
+            Primero=Primero.sig.sig;
         }else{
-            while(actual.info!=val){
-                anterior=actual;
-                actual=actual.sig;
+            while (s.sig.sig!=null) {
+                while (s.sig.info!=val) {
+                    s=s.sig;
+                }
+                while(s.sig.info==val){
+                    s.sig=s.sig.sig;
+                }
+                
             }
-            actual=actual.sig;
-            anterior.sig=actual;
-            i--;
         }
         
 
