@@ -1,3 +1,4 @@
+import algoritmos.MetodosDiccMultiple;
 import api.ConjuntoTDA;
 import api.DiccionarioMultipleTDA;
 import impl.DiccionarioMultipleDinamico;
@@ -15,6 +16,8 @@ public class PruebaDiccionarioMultipleDinamico {
         dicc.Agregar(2, 0);
         dicc.Agregar(2,1);
         dicc.Agregar(3, 0);
+
+        MetodosDiccMultiple.ImprimirMultipleDiccionario(dicc);
 
         dicc.EliminarValor(1,2);
         dicc.Eliminar(3);

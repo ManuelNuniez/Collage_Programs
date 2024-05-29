@@ -1,6 +1,7 @@
 import api.DiccionarioSimpleTDA;
 import impl.DiccionarioSimpleDinamico;
 import api.ConjuntoTDA;
+import algoritmos.MetodosDiccSimple;
 
 public class PruebaDiccionarioSimpleDinamico {
     public static void main(String[] Args){
@@ -11,6 +12,8 @@ public class PruebaDiccionarioSimpleDinamico {
         dicc.Agregar(2, 2);
         dicc.Agregar(3, 3);
 
+        MetodosDiccSimple.ImprimirSimpleDiccionario(dicc);
+
         ConjuntoTDA claves= dicc.Claves();
         while (!claves.ConjuntoVacio()) {
             int a=claves.Elegir();
@@ -19,6 +22,8 @@ public class PruebaDiccionarioSimpleDinamico {
             claves.Sacar(a);
             dicc.Eliminar(a);
         }
+
+        
         
     }
 

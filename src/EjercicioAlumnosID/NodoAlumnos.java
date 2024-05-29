@@ -1,5 +1,8 @@
 package EjercicioAlumnosID;
-
-public class NodoAlumnosTDA {
-
+import Lista.ListaTDA;// SI
+public class NodoAlumnos {
+    ListaTDA info;
+    int indice;
+    int Clave;
+    NodoAlumnos sig;
 }

@@ -1,7 +1,5 @@
 package Lista;
 
-import impl.Nodo;
-
 public class ListaDinamica implements ListaTDA{
     NodoLista Origen;
     int i;

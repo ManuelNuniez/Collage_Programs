@@ -1,12 +1,11 @@
 package EjercicioAlumnosID;
 import Lista.ListaDinamica;
 import Lista.ListaTDA;
-import Simulacro1erParcial.*;
 
 import api.ConjuntoTDA;
 import impl.ConjuntoDinamico;
 
-public class Alumnos implements AlumnosTDA {
+public class DiccAlumnos implements AlumnosTDA {
     NodoAlumnos Origen;
 
     @Override
@@ -88,7 +87,7 @@ public class Alumnos implements AlumnosTDA {
 
     @Override
     public float Promedio(int alumno) {
-        int acum=0;
+        float acum=0;
         NodoAlumnos aux= Origen;
         while (aux.Clave!=alumno) {
             aux=aux.sig;
@@ -124,10 +123,12 @@ public class Alumnos implements AlumnosTDA {
         ConjuntoTDA cAlumnos= new ConjuntoDinamico();
         cAlumnos.InicializarConjunto();
         NodoAlumnos aux= Origen;
+
         while(aux!=null){
             cAlumnos.Agregar(aux.Clave);
             aux=aux.sig;
         }
+
         return cAlumnos;
     }
 
