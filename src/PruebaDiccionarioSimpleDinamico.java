@@ -1,6 +1,6 @@
 import api.DiccionarioSimpleTDA;
 import impl.DiccionarioSimpleDinamico;
-import api.ConjuntoTDA;
+import algoritmos.MetodosConjunto;
 import algoritmos.MetodosDiccSimple;
 
 public class PruebaDiccionarioSimpleDinamico {
@@ -11,17 +11,26 @@ public class PruebaDiccionarioSimpleDinamico {
         dicc.Agregar(1, 1);
         dicc.Agregar(2, 2);
         dicc.Agregar(3, 3);
+        dicc.Agregar(4,4 );
+        dicc.Agregar(5, 5);
 
         MetodosDiccSimple.ImprimirSimpleDiccionario(dicc);
 
-        ConjuntoTDA claves= dicc.Claves();
-        while (!claves.ConjuntoVacio()) {
-            int a=claves.Elegir();
-            System.out.println("clave: "+ a);
-            System.out.println("  valor: "+ dicc.Recuperar(a));
-            claves.Sacar(a);
-            dicc.Eliminar(a);
-        }
+        MetodosConjunto.ImprimirConjunto(dicc.Claves());
+        System.out.println();
+
+        System.out.println(dicc.Recuperar(2));
+
+        dicc.Eliminar(3);
+        dicc.Eliminar(2);
+        
+
+        System.out.println("segunda impresión");
+        MetodosDiccSimple.ImprimirSimpleDiccionario(dicc);
+
+        
+
+
 
         
         

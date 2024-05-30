@@ -39,17 +39,19 @@ public class MetodosPila {
     }
 
     public static void ImprimirPila(PilaTDA pilaOriginal){
-        PilaTDA aux = new PilaDinamica();
-        aux.InicializarPila();
-        MetodosPila.CopiarPila(pilaOriginal, aux);
-        MetodosPila.InvertirPila(aux);
-        
-        while (!aux.PilaVacia()){
-            System.out.println(aux.Tope());
-            aux.Desapilar();
+        if (!pilaOriginal.PilaVacia()) {
 
+            int elem = pilaOriginal.Tope();
+            System.out.println(elem);
+
+            pilaOriginal.Desapilar();
+
+            ImprimirPila(pilaOriginal);
+            
+            pilaOriginal.Apilar(elem);
         }
     }
+
     public static int ContarElementos(PilaTDA pila){
         PilaTDA aux= new PilaDinamica();
         aux.InicializarPila();

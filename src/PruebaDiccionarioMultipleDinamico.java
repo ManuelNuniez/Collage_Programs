@@ -1,6 +1,5 @@
 import algoritmos.MetodosConjunto;
 import algoritmos.MetodosDiccMultiple;
-import api.ConjuntoTDA;
 import api.DiccionarioMultipleTDA;
 import impl.DiccionarioMultipleDinamico;
 

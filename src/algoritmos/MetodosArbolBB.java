@@ -1,9 +1,9 @@
 package algoritmos;
-import Arbol.ArbolBB;
+
 import Arbol.ArbolBBTDA;
 import api.ConjuntoTDA;
 import impl.ConjuntoDinamico;
-import java.math.*;
+
 
 public class MetodosArbolBB {
     public static void PreOrder(ArbolBBTDA a){

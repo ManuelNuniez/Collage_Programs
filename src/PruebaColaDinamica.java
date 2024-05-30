@@ -1,3 +1,4 @@
+import algoritmos.MetodosCola;
 import api.ColaTDA;
 import impl.ColaDinamica;
 
@@ -11,6 +12,8 @@ public class PruebaColaDinamica {
         c1.Acolar(2);
         c1.Acolar(3);
         c1.Acolar(4);
+
+        MetodosCola.ImprimirCola(c1);
 
         while(!c1.ColaVacia())
         {
