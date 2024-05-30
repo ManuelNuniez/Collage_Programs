@@ -32,6 +32,7 @@ public class DiccAlumnos implements AlumnosTDA {
             }
             aux.info.append(nota);
             aux.indice++;
+            
         }else if (!Alumnos().Pertenece(alumno)) {
             aux.sig=Origen;
             Origen=aux;

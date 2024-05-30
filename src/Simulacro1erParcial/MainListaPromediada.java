@@ -1,7 +1,6 @@
 package Simulacro1erParcial;
 
 import algoritmos.MetodosCola;
-import api.ColaTDA;
 
 public class MainListaPromediada {
     public static void main(String[] args){

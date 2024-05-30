@@ -4,6 +4,7 @@ import api.ConjuntoTDA;
 import api.DiccionarioMultipleTDA;
 
 public class DiccionarioMultipleDinamico implements DiccionarioMultipleTDA {
+
     NodoDiccionarioMultiple Origen;
 
     @Override
@@ -75,16 +76,37 @@ public class DiccionarioMultipleDinamico implements DiccionarioMultipleTDA {
         }
     }
 
-    @Override
+    @Override    
     public ConjuntoTDA Recuperar(int clave) {
+
+        ConjuntoTDA copia = new ConjuntoDinamico();
+        copia.InicializarConjunto();//esta copia es la que vamos a retornar
+
+        ConjuntoTDA respaldo = new ConjuntoDinamico();
+        respaldo.InicializarConjunto();// este respaldo es para no perder los valores originales
 
         NodoDiccionarioMultiple aux = Origen;
 
-        while (aux.Clave!=clave) {//pasamos por nodos hasta llegar a la Clave que buscamos
+        while (aux!=null && aux.Clave!=clave) {//Recorremos hasta llegar a la Clave que buscamos
             aux=aux.sig;
         }
 
-        return aux.valores;//aux.valores es el conjunto de valores asociados a la clave del nodo
+
+        while(!aux.valores.ConjuntoVacio()){ //sacamos los valores para almacenarlos en copia
+            int x=aux.valores.Elegir();
+            copia.Agregar(x);
+            respaldo.Agregar(x);// guardamos para no perder los valores
+            aux.valores.Sacar(x);
+        }
+
+        while (!respaldo.ConjuntoVacio()) {//recuperamos los valores desde el respaldo
+            int x= respaldo.Elegir();
+            aux.valores.Agregar(x);
+            respaldo.Sacar(x);
+        }
+        
+
+        return copia;
     }
 
     @Override

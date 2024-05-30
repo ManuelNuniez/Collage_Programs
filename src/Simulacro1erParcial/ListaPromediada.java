@@ -1,6 +1,5 @@
 package Simulacro1erParcial;
 
-import Lista.NodoLista;
 import api.ColaPrioridadTDA;
 import api.ColaTDA;
 import impl.ColaDinamica;
