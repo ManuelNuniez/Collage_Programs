@@ -51,12 +51,13 @@ public class MinHeap implements HeapTDA{
     public void SacarH() {
         i--;
         vector[0]=vector[i];
+        
 
         int p =0;
         int hd=2;
         int hi=1;
 
-        while (vector[p] > vector[hi] || vector[p] > vector[hi]) {
+        while ((vector[p] > vector[hi] && hi < i) ||(vector[p] > vector[hd] && hd < i)) {
             if (vector[hi] < vector[hd]) {
                 int aux= vector[p];
                 vector[p] = vector[hi];
@@ -80,14 +81,12 @@ public class MinHeap implements HeapTDA{
 
     @Override
     public boolean HeapVacio() {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'HeapVacio'");
+        return(i==0);
     }
 
     @Override
     public int PrimerValor() {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'PrimerValor'");
+        return vector[0];
     }
 
 }
