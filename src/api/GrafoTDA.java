@@ -5,8 +5,8 @@ public interface GrafoTDA {
     void AgregarVertice(int v);
     void EliminarVertice(int v);
     ConjuntoTDA Vertices();
-    void AgregarArista();
+    void AgregarArista(int origen,int destino, int peso);
     void EliminarArista(int origen, int destino);
-    boolean ExisteArista();
+    boolean ExisteArista(int origen, int destino);
     int PesoArista(int origen, int destino);
 }
