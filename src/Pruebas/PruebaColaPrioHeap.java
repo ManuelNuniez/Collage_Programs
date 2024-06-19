@@ -1,13 +1,13 @@
-import impl.ColaPrioridadDinamica;
+//import impl.ColaPrioridadDinamica;
 import impl.ColaPrioridadHeap;
-import impl.MaxHeap;
-import impl.MaxHeapPrio;
-import impl.MinHeap;
-import impl.ValPrio;
+//import impl.MaxHeap;
+//import impl.MaxHeapPrio;
+//import impl.MinHeap;
+//import impl.ValPrio;
 import algoritmos.MetodosColaPrioridad;
 import api.ColaPrioridadTDA;
-import api.HeapTDA;
-import api.PrioHeapTDA;
+//import api.HeapTDA;
+//import api.PrioHeapTDA;
 
 public class PruebaColaPrioHeap {
     public static void main(String[] args) {

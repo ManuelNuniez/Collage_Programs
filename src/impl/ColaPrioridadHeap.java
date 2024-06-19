@@ -1,7 +1,7 @@
 package impl;
 
 import api.ColaPrioridadTDA;
-import api.HeapTDA;
+
 import api.PrioHeapTDA;
 
 public class ColaPrioridadHeap implements ColaPrioridadTDA {
