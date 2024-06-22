@@ -1,7 +1,7 @@
 package api;
 
 public interface ColaPrioridadTDA {
-    void InicializarCola();
+    void InicializarCola(boolean mayorAmenor);
     void Acolar(int n, int prioridad);//cola previamente inicializada
     void Desacolar();//cola inicializada y no vacia
     int PrimerElemento();//cola inicializada y no vacia

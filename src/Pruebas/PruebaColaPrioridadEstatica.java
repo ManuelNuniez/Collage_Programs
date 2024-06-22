@@ -5,7 +5,7 @@ public class PruebaColaPrioridadEstatica {
     public static void main(String[] args) throws Exception
     {
         ColaPrioridadTDA cp1 = new ColaPrioridadEstatica();
-        cp1.InicializarCola();
+        cp1.InicializarCola(true);
 
         cp1.Acolar(4,2);
         cp1.Acolar(5, 4);

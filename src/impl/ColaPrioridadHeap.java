@@ -11,8 +11,13 @@ public class ColaPrioridadHeap implements ColaPrioridadTDA {
     PrioHeapTDA Cola;
 
     @Override
-    public void InicializarCola() {
-        Cola= new MinHeapPrio();
+    public void InicializarCola(boolean mayorAmenor) {
+        if (mayorAmenor) {
+            Cola= new MaxHeapPrio();
+        }else{
+            Cola= new MinHeapPrio();
+        }
+
         Cola.InicializarHeap();
     }
 

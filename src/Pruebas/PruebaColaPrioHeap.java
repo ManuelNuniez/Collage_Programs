@@ -13,7 +13,7 @@ public class PruebaColaPrioHeap {
     public static void main(String[] args) {
 
         ColaPrioridadTDA cp1 = new ColaPrioridadHeap();
-        cp1.InicializarCola();
+        cp1.InicializarCola(false);
 
         cp1.Acolar(4,2);
         cp1.Acolar(5, 4);

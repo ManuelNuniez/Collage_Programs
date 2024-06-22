@@ -78,7 +78,7 @@ public class ListaPromediada implements ListaPromediadaTDA{
         ColaTDA menores=new ColaDinamica();
         menores.InicializarCola();
         ColaPrioridadTDA menoresp = new ColaPrioridadDinamica();
-        menoresp.InicializarCola();
+        menoresp.InicializarCola(true);
 
         while (aux!=null) {
             if(aux.info<Promedio()){

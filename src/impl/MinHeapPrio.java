@@ -6,10 +6,11 @@ public class MinHeapPrio implements PrioHeapTDA {
 
     int i;
     ValPrio[] vector;
-    int capacidad= 10;
+    int capacidad;
 
     @Override
     public void InicializarHeap() {
+        capacidad =10;
         vector= new ValPrio[capacidad];
         i=0;
     }
