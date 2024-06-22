@@ -7,7 +7,7 @@ public class ColaPrioridadDinamica implements ColaPrioridadTDA {
     NodoPrioridad Ultimo;
 
     @Override
-    public void InicializarCola() {
+    public void InicializarCola(boolean mayorAmenor) {
         Primero=null;
         Ultimo=null;
 

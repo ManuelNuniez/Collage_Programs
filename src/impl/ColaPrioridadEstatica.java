@@ -7,7 +7,7 @@ public class ColaPrioridadEstatica implements ColaPrioridadTDA {
     int[] vectorPrio;
     int i;
     @Override
-    public void InicializarCola() {
+    public void InicializarCola(boolean mayorAmenor) {
         vectorInfo = new int[100];
         vectorPrio = new int[100];
         i=0;
