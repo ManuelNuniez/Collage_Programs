@@ -1,3 +1,5 @@
+import algoritmos.MetodosColaPrioridad;
+import algoritmos.MetodosDiccSimple;
 import algoritmos.MetodosGrafo;
 import api.GrafoTDA;
 import impl.Grafos.Grafo;
@@ -11,12 +13,23 @@ public class PruebaGrafos {
         g.AgregarVertice(1);
         g.AgregarVertice(2);
         g.AgregarVertice(3);
+        g.AgregarVertice(4);
+        g.AgregarVertice(5);
+        g.AgregarVertice(6);
+
         
 
-        g.AgregarArista(0, 3, 4);
-        g.AgregarArista(0, 1, 7);
-        g.AgregarArista(1, 3, 2);
-        g.AgregarArista(3, 2, 5);
+        g.AgregarArista(0, 2, 6);
+        g.AgregarArista(0, 1, 2);
+        g.AgregarArista(1, 3, 5);
+        g.AgregarArista(2, 3, 8);
+        g.AgregarArista(3, 5, 15);
+        g.AgregarArista(3, 4, 10);
+        g.AgregarArista(5, 4, 6);
+        g.AgregarArista(5, 6, 6);
+        g.AgregarArista(4, 6, 2);
+        g.AgregarArista(2, 4, 2);
+        g.AgregarArista(3, 6, 20);
         //g.AgregarArista(1, 1, 0);
 
         System.out.println(g.ExisteArista(0, 2));
@@ -24,6 +37,11 @@ public class PruebaGrafos {
         System.out.println(g.PesoArista(1, 3));
 
         MetodosGrafo.ImprimirGrafo(g);
+
+        MetodosDiccSimple.ImprimirSimpleDiccionario(g.CaminosMenorPeso(0, 6));
+
+        
+
 
     }
 

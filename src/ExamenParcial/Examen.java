@@ -112,7 +112,7 @@ public class Examen implements ExamenTDA{
     @Override
     public ColaPrioridadTDA ReservasPorVuelo(int nro_vuelo) {
         ColaPrioridadTDA reservasXvuelo = new ColaPrioridadDinamica();
-        reservasXvuelo.InicializarCola();
+        reservasXvuelo.InicializarCola(true);
 
         NodoExamen aux= Primero;
         while (aux!=null) {

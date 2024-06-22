@@ -1,8 +1,12 @@
 package impl.Grafos;
 
+import api.ColaPrioridadTDA;
 import api.ConjuntoTDA;
+import api.DiccionarioSimpleTDA;
 import api.GrafoTDA;
+import impl.ColaPrioridadHeap;
 import impl.ConjuntoDinamico;
+import impl.DiccionarioSimpleDinamico;
 
 public class Grafo implements GrafoTDA{
 
@@ -119,5 +123,60 @@ public class Grafo implements GrafoTDA{
 
         return aux.peso;
     }
+
+    
+    @Override
+    public DiccionarioSimpleTDA CaminosMenorPeso(int origen,int destino) {
+        DiccionarioSimpleTDA caminos = new DiccionarioSimpleDinamico();
+        caminos.InicializarDiccionario();
+        
+        // Inicializar las estructuras auxiliares
+        ConjuntoTDA vertices = Vertices();
+        ColaPrioridadTDA colaPrioridad = new ColaPrioridadHeap();
+        colaPrioridad.InicializarCola(false);
+        
+        // Inicializar los valores de distancia y visitado
+        NodoVertice nodoOrigen = BuscarNodo(origen);
+        NodoVertice aux = root;
+        while (aux != null) {
+            if (aux == nodoOrigen) {
+                caminos.Agregar(aux.valor, 0);
+            } else {
+                caminos.Agregar(aux.valor, Integer.MAX_VALUE);
+            }
+            aux = aux.sigNodo;
+        }
+        
+        // Agregar el nodo origen a la cola de prioridad
+        colaPrioridad.Acolar(origen, 0);
+        
+        while (!colaPrioridad.ColaVacia()) {
+            int nodoActual = colaPrioridad.PrimerElemento();
+            int distanciaActual = caminos.Recuperar(nodoActual);
+            colaPrioridad.Desacolar();
+            
+            // Obtener los nodos adyacentes al nodo actual
+            NodoVertice nodoActualVertice = BuscarNodo(nodoActual);
+            NodoArista aristaActual = nodoActualVertice.arista;
+            while (aristaActual != null) {
+                int nodoDestino = aristaActual.nodoDestino.valor;
+                int pesoArista = aristaActual.peso;
+                
+                // Calcular la nueva distancia
+                int distanciaNueva = distanciaActual + pesoArista;
+                
+                // Actualizar la distancia si es menor a la distancia actual
+                if (distanciaNueva < caminos.Recuperar(nodoDestino)) {
+                    caminos.Agregar(nodoDestino, distanciaNueva);
+                    colaPrioridad.Acolar(nodoDestino, distanciaNueva);
+                }
+                
+                aristaActual = aristaActual.sigArista;
+            }
+        }
+        
+        return caminos;
+    }
+
 
 }
