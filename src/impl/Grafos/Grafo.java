@@ -126,12 +126,11 @@ public class Grafo implements GrafoTDA{
 
     
     @Override
-    public DiccionarioSimpleTDA CaminosMenorPeso(int origen,int destino) {
+    public DiccionarioSimpleTDA CaminosMenorPeso(int origen) {
         DiccionarioSimpleTDA caminos = new DiccionarioSimpleDinamico();
         caminos.InicializarDiccionario();
         
         // Inicializar las estructuras auxiliares
-        ConjuntoTDA vertices = Vertices();
         ColaPrioridadTDA colaPrioridad = new ColaPrioridadHeap();
         colaPrioridad.InicializarCola(false);
         
@@ -142,7 +141,7 @@ public class Grafo implements GrafoTDA{
             if (aux == nodoOrigen) {
                 caminos.Agregar(aux.valor, 0);
             } else {
-                caminos.Agregar(aux.valor, Integer.MAX_VALUE);
+                caminos.Agregar(aux.valor, Integer.MAX_VALUE);// distancia infinita si nodo oirigen no es root.
             }
             aux = aux.sigNodo;
         }
