@@ -141,7 +141,7 @@ public class Grafo implements GrafoTDA{
             if (aux == nodoOrigen) {
                 caminos.Agregar(aux.valor, 0);
             } else {
-                caminos.Agregar(aux.valor, Integer.MAX_VALUE);// distancia infinita si nodo oirigen no es root.
+                caminos.Agregar(aux.valor, Integer.MAX_VALUE);// distancia infinita si los nodos no se conectan.
             }
             aux = aux.sigNodo;
         }

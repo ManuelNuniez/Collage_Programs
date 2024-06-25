@@ -38,7 +38,7 @@ public class PruebaGrafos {
 
         MetodosGrafo.ImprimirGrafo(g);
 
-        MetodosDiccSimple.ImprimirSimpleDiccionario(g.CaminosMenorPeso(0, 6));
+        MetodosDiccSimple.ImprimirSimpleDiccionario(g.CaminosMenorPeso(3));
 
         
 
