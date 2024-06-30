@@ -203,18 +203,25 @@ public class MetodosArbolBB {
         return conj;
     }
 
-    public static int PadreInmediato(ArbolBBTDA a,int valor){
+    public static int PadreInmediato(ArbolBBTDA a, int valor) {
         if (a.ArbolVacio()) {
-            return valor;
-        }else if (a.HijoDer().Raiz()==valor || a.HijoIzq().Raiz()==valor) {
+            return -1; // Devuelve un valor que indique que el padre no se encontró.
+        }
+    
+        // Verifica si el hijo derecho o izquierdo existe y si su raíz es igual al valor.
+        if ((!a.HijoDer().ArbolVacio() && a.HijoDer().Raiz() == valor) || 
+            (!a.HijoIzq().ArbolVacio() && a.HijoIzq().Raiz() == valor)) {
             return a.Raiz();
-        }else if (a.Raiz()>valor){
+        }
+    
+        // Decide en cuál subárbol buscar según el valor de la raíz actual.
+        if (a.Raiz() > valor) {
             return PadreInmediato(a.HijoIzq(), valor);
-        }else{
+        } else {
             return PadreInmediato(a.HijoDer(), valor);
         }
-        
     }
+    
 
     private static boolean EncontreHoja(ArbolBBTDA a){//* nos dice si un valor es hoja */
         if(!a.ArbolVacio()){

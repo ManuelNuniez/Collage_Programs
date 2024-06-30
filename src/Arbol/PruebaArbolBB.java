@@ -31,9 +31,12 @@ public class PruebaArbolBB {
         b.AgregarElem(15);
         b.AgregarElem(9);
         b.AgregarElem(11);
+        b.AgregarElem(2);
 
         //MetodosArbolBB.PadreHoja(b);
         System.out.println(MetodosArbolBB.PadreInmediato(b,1));
+        MetodosArbolBB.AncestroComun(b, 9,12);
+        MetodosArbolBB.AncestroComun(b, 1, 11);
 
         
 
