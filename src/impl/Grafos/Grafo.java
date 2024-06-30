@@ -177,5 +177,21 @@ public class Grafo implements GrafoTDA{
         return caminos;
     }
 
+    @Override
+    public ConjuntoTDA NodosVecinos(int v) {
+        ConjuntoTDA vecinos = new ConjuntoDinamico();
+        vecinos.InicializarConjunto();
+
+        NodoVertice nodo = BuscarNodo(v);
+        NodoArista aux = nodo.arista;
+
+        while (aux != null) {
+            vecinos.Agregar(aux.nodoDestino.valor);
+            aux = aux.sigArista;
+        }
+        
+        return vecinos;
+    }
+
 
 }
