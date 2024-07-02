@@ -1,6 +1,8 @@
 package Arbol;
 
 import algoritmos.MetodosArbolBB;
+import algoritmos.MetodosConjunto;
+import api.ConjuntoTDA;
 
 
 public class PruebaArbolBB {
@@ -10,6 +12,9 @@ public class PruebaArbolBB {
 
         ArbolBBTDA b =new ArbolBB();
         b.InicializarArbol();
+
+        ArbolBBTDA c = new ArbolBB();
+        c.InicializarArbol();
 
         a.AgregarElem(20);
         a.AgregarElem(10);
@@ -33,10 +38,26 @@ public class PruebaArbolBB {
         b.AgregarElem(11);
         b.AgregarElem(2);
 
-        //MetodosArbolBB.PadreHoja(b);
-        System.out.println(MetodosArbolBB.PadreInmediato(b,1));
-        MetodosArbolBB.AncestroComun(b, 9,12);
-        MetodosArbolBB.AncestroComun(b, 1, 11);
+        c.AgregarElem(8);
+        c.AgregarElem(4);
+        c.AgregarElem(12);
+        c.AgregarElem(1);
+        c.AgregarElem(5);
+        c.AgregarElem(10);
+        c.AgregarElem(15);
+        c.AgregarElem(9);
+        c.AgregarElem(11);
+
+
+        
+        // MetodosArbolBB.PadreHoja(c);
+        // System.out.println(MetodosArbolBB.PadreInmediato(b,1));
+        // MetodosArbolBB.AncestroComun(b, 9,12);
+        // MetodosArbolBB.AncestroComun(b, 1, 11);
+        ConjuntoTDA conj = MetodosArbolBB.ElementosMenores(c, 12);
+        MetodosConjunto.ImprimirConjunto(conj);
+        System.out.println( );
+        
 
         
 

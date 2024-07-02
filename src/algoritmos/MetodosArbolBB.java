@@ -203,6 +203,32 @@ public class MetodosArbolBB {
         return conj;
     }
 
+    public static ConjuntoTDA ElementosMenores(ArbolBBTDA a, int val){
+        ConjuntoTDA conj = new ConjuntoDinamico();
+        conj.InicializarConjunto();
+
+        if (a.ArbolVacio()) {
+            return conj;
+        }else if (a.Raiz() < val) {
+            conj.Agregar(a.Raiz());
+        }
+
+        ConjuntoTDA conjI = ElementosMenores(a.HijoIzq(), val);
+        ConjuntoTDA conjD = ElementosMenores(a.HijoDer(), val);
+
+        while (!conjI.ConjuntoVacio()) {
+            int x = conjI.Elegir();
+            conj.Agregar(x);
+            conjI.Sacar(x);
+        }
+        while (!conjD.ConjuntoVacio()) {
+            int x = conjD.Elegir();
+            conj.Agregar(x);
+            conjD.Sacar(x);
+        }
+        return conj;
+    }
+
     public static int PadreInmediato(ArbolBBTDA a, int valor) {
         if (a.ArbolVacio()) {
             return -1; // Devuelve un valor que indique que el padre no se encontró.
