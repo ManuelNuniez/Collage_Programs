@@ -79,7 +79,7 @@ public class ConjuntoDinamico implements ConjuntoTDA {
         Nodo aux= new Nodo();
         aux=Primero;
         while(!pertenece && aux!=null){
-            if(aux.info== x ){
+            if(aux.info == x ){
                 pertenece=true;
             }
             aux=aux.sig;
