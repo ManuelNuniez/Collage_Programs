@@ -1,5 +1,3 @@
-import algoritmos.MetodosColaPrioridad;
-import algoritmos.MetodosDiccSimple;
 import algoritmos.MetodosGrafo;
 import api.GrafoTDA;
 import impl.Grafos.Grafo;
@@ -38,7 +36,7 @@ public class PruebaGrafos {
 
         MetodosGrafo.ImprimirGrafo(g);
 
-        MetodosDiccSimple.ImprimirSimpleDiccionario(g.CaminosMenorPeso(3));
+        System.out.println("Camino mas corto de 3 a 2: " + MetodosGrafo.CaminoMasCorto(g, 3, 2));
 
         
 

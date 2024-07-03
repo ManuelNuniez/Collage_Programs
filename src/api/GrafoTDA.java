@@ -11,5 +11,5 @@ public interface GrafoTDA {
     int PesoArista(int origen, int destino);
     //ConjuntoTDA ConjuntoAristas();
     ConjuntoTDA NodosVecinos(int v);
-    DiccionarioSimpleTDA CaminosMenorPeso(int origen);
+    
 }
