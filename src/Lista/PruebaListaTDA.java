@@ -1,4 +1,7 @@
 package Lista;
+
+import algoritmos.MetodosLista;
+
 public class PruebaListaTDA {
     public static void main(String[] Args){
         ListaTDA lista=new ListaEstatica();
@@ -10,17 +13,19 @@ public class PruebaListaTDA {
         lista.insert(4, 0);
         lista.append(4);
         lista.append(10);
-        System.out.println(lista.count(4));
-        System.out.println(lista.index(4));
-        System.out.println(lista.recuperarPos(2));
+        lista.append(1);
+        // System.out.println(lista.count(4));
+        // System.out.println(lista.index(4));
+        // System.out.println(lista.recuperarPos(2));
+        // lista.mostrarLista();
+        // lista.pop();
+        // lista.remove(5);
+        // lista.removeAll(4);
+        // lista.mostrarLista();
+        // lista.clear();
         lista.mostrarLista();
-        lista.pop();
-        lista.remove(5);
-        lista.removeAll(4);
-        lista.mostrarLista();
-        lista.clear();
-        lista.mostrarLista();
-        System.out.println(lista.listaVacia());
+        //System.out.println(lista.listaVacia());
+        System.out.println(MetodosLista.SumaRec(lista));
 
 
     }
