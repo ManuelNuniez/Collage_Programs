@@ -1,6 +1,6 @@
 package algoritmos;
 
-import Arbol.ArbolBBTDA;
+import api.ArbolBBTDA;
 import api.ConjuntoTDA;
 import impl.ConjuntoDinamico;
 

@@ -1,4 +1,6 @@
-package Arbol;
+package impl;
+
+import api.ArbolBBTDA;
 
 public class NodoABB {
     int Info;

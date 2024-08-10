@@ -1,6 +1,6 @@
 package Examen;
 
-import Arbol.ArbolBBTDA;
+import api.ArbolBBTDA;
 
 public class Ejericico3Metodo {
     public static void ParesMayorMenor(ArbolBBTDA arbol){

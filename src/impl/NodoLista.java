@@ -1,4 +1,4 @@
-package Lista;
+package impl;
 
 public class NodoLista {
     int info;

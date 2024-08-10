@@ -1,4 +1,4 @@
-package Arbol;
+package api;
 
 public interface ArbolBBTDA {
     int Raiz();

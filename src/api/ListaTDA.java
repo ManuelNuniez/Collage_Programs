@@ -1,6 +1,6 @@
 //programa hecho por Santiago Andrés Ferreyra y Manuel Núñez
 
-package Lista;
+package api;
 
 
 public interface ListaTDA {

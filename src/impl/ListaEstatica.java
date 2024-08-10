@@ -1,4 +1,6 @@
-package Lista;
+package impl;
+
+import api.ListaTDA;
 
 public class ListaEstatica implements ListaTDA {
     int[] vector;

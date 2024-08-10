@@ -1,6 +1,8 @@
-package Lista;
+
 
 import algoritmos.MetodosLista;
+import api.ListaTDA;
+import impl.ListaEstatica;
 
 public class PruebaListaTDA {
     public static void main(String[] Args){

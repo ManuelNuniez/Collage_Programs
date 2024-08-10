@@ -1,6 +1,7 @@
 package impl;
 
 import api.PilaTDA;
+import impl.Nodo;
 
 
 public class PilaDinamica implements PilaTDA {

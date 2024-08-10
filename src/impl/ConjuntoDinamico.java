@@ -1,5 +1,6 @@
 package impl;
 import api.ConjuntoTDA;
+import impl.Nodo;
 
 
 public class ConjuntoDinamico implements ConjuntoTDA {

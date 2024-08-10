@@ -1,5 +1,5 @@
 package EjercicioAlumnosID;
-import Lista.ListaTDA;// SI
+import api.ListaTDA;
 public class NodoAlumnos {
     ListaTDA info;
     int indice;

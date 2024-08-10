@@ -1,4 +1,6 @@
-package Arbol;
+package impl;
+
+import api.ArbolBBTDA;
 
 public class ArbolBB implements ArbolBBTDA {
     NodoABB raiz;

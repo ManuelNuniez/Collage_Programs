@@ -1,9 +1,8 @@
 package EjercicioAlumnosID;
-import Lista.ListaDinamica;
-import Lista.ListaTDA;
-
 import api.ConjuntoTDA;
+import api.ListaTDA;
 import impl.ConjuntoDinamico;
+import impl.ListaDinamica;
 
 public class DiccAlumnos implements AlumnosTDA {
     NodoAlumnos Origen;

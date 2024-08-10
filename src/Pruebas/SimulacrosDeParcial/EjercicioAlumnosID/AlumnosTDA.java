@@ -1,6 +1,6 @@
 package EjercicioAlumnosID;
-import Lista.ListaTDA;
 import api.ConjuntoTDA;
+import api.ListaTDA;
 
 public interface AlumnosTDA {
     void inicializar();

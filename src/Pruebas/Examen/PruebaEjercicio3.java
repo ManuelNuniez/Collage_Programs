@@ -1,7 +1,7 @@
 package Examen;
 
-import Arbol.ArbolBB;
-import Arbol.ArbolBBTDA;
+import api.ArbolBBTDA;
+import impl.ArbolBB;
 
 public class PruebaEjercicio3 {
     public static void main(String[] args) {

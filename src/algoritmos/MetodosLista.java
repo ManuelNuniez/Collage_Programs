@@ -1,6 +1,6 @@
 package algoritmos;
 
-import Lista.ListaTDA;
+import api.ListaTDA;
 
 public class MetodosLista {
 

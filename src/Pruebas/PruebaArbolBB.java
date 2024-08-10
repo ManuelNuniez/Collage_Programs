@@ -1,8 +1,10 @@
-package Arbol;
+
 
 import algoritmos.MetodosArbolBB;
 import algoritmos.MetodosConjunto;
+import api.ArbolBBTDA;
 import api.ConjuntoTDA;
+import impl.ArbolBB;
 
 
 public class PruebaArbolBB {
