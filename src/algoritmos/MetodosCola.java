@@ -14,7 +14,7 @@ public class MetodosCola {
         aux.InicializarCola();
 
         while(!cola.ColaVacia()){//desacolamos la cola para imprimir, elemento a elemento
-            System.out.println(cola.PrimerElemento());
+            System.out.print(cola.PrimerElemento() + ", ");
             aux.Acolar(cola.PrimerElemento());
             cola.Desacolar();
         }

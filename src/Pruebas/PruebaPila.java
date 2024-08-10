@@ -1,5 +1,6 @@
-package algoritmos;
 
+
+import algoritmos.MetodosPila;
 import api.PilaTDA;
 import impl.PilaDinamica;
 
@@ -19,6 +20,8 @@ public class PruebaPila {
         MetodosPila.ImprimirPila(p);
         System.out.println("segunda impresion");
         MetodosPila.ImprimirPila(p);
+
+        System.out.println(p.PilaVacia());
     }
 
 }

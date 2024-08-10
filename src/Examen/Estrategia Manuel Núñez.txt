@@ -1,0 +1,26 @@
+Estrategia Manuel Núñez
+Punto 1:
+    En este punto se haran 1 copia del conjunto A y se iran multiplicando el primer elemento extraido del conjunto A con cada elemento del conjunto B,
+    una vez el segundo conjunto este vácio, se tomara otro elemento del primer conjunto y se copiara de nuevo el conjunto B para repetir toda la operacion.
+    
+    El costo de Este Metodo de producto seria (Tamaño de A * Tamaño de B) que a resumidas cuentas seria lineal, ya que se considera 
+    cuadrático unicamente cuando se multiplica un valor por si mismo.
+
+Punto 2
+
+    en este ejercicio interpreté que los indices del vector equivale al elemento que contienen, es decir, en la posicion 3, ponemos un 1 si el conjunto ponemos un 3.
+    - utilicé un vector que al inicializarlo tendra un tamaño recibido como parametro.
+    - Al agregar un elemento, primero verifico que el elemento sea menor al tamaño del vector y luego lo inserto en la la psosicion igual al indice.
+    - Al quitar un elemento, verifico si pertenece al universo, si es así verifico que este incluido en el vector, si se cumplen estos dos casos saco el elemento y convierto el 1 en 0
+    - Al elegir un elemento elijo una posicion aleatoria del vexctor y verifico que haya un 1 en ella, si es así, devuelvo la posicion/elemento del vector.
+    - Para ver si el conjunto está vacio, Primero asumo que que el vector lo está y luego lo recorro, si encuentro un 1, lo dejo de recorrer y bajo la bandera, si no encuentro nada, devuelvo la bandera levantada.
+    - Para crear el complemento del conjunto, recorro el primer conjunto y donde haya un 0 voy a almacenar el indice como elemento en el conjunto "complemento".
+
+    El costo de cada uno de los metodos esta en el TDA
+
+Punto 3 
+pares de mayor a menor
+    Se recorre el arbol con el metodo in orden, pero recorriendo hacia la derecha primero en vez de hacia la izquierda
+    Al mismo tiempo se verificará que los valores sean pares.
+
+    el costo de este metodo es lineal.

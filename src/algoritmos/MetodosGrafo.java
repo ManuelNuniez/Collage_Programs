@@ -68,4 +68,28 @@ public class MetodosGrafo {
         
 
     }
+
+    public static boolean TopoOrdenado(GrafoTDA g){
+        ConjuntoTDA vertices = g.Vertices();
+        boolean ordenado = true;
+        int verticeActual;
+        int vecinoActual;
+        
+        while (ordenado && !vertices.ConjuntoVacio()) {
+            verticeActual = vertices.Elegir();
+            vertices.Sacar(verticeActual);
+
+            ConjuntoTDA vecinos = g.NodosVecinos(verticeActual);
+            while (!vecinos.ConjuntoVacio()) {
+                vecinoActual = vecinos.Elegir();
+                vecinos.Sacar(vecinoActual);
+                
+                if (vecinoActual < verticeActual) {
+                    ordenado = false;
+                }
+            }
+        }
+        
+        return ordenado;
+    }
 }

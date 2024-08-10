@@ -38,6 +38,10 @@ public class PruebaGrafos {
 
         System.out.println("Camino mas corto de 3 a 2: " + MetodosGrafo.CaminoMasCorto(g, 3, 2));
 
+        System.out.printf("El grafo está topologicamente ordenado %b ", MetodosGrafo.TopoOrdenado(g));
+
+        
+
         
 
 
