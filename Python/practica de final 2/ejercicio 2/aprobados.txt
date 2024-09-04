@@ -1,0 +1,2 @@
+1000;Maria;Jimenez;4;6
+1176;Manuel;Nuã±ez;10;10

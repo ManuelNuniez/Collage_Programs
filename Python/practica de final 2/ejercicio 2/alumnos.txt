@@ -1,0 +1,5 @@
+1000;maria;jimenez;4;6
+1233;naranccia;tocoymevoy;2;2
+1176;manuel;nuñez;10;10
+6734;armando;estebanquito;5;2
+5665;suzana;horia;2;7

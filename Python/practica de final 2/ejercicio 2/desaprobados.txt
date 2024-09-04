@@ -1,0 +1,3 @@
+1233;Naranccia;Tocoymevoy;2;2;AMBOS
+6734;Armando;Estebanquito;5;2;SEGUNDO
+5665;Suzana;Horia;2;7;PRIMERO

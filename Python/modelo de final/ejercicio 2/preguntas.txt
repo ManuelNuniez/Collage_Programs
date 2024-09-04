@@ -1,0 +1,8 @@
+1;el caracter # se utiliza para comentarios de python?;si
+2;es posible agragar un elemento a una lista de la siguiente manera? lista=lista + "a";no
+3;al usar la funcion map, es necesario convertir el resultado a una lista porque la funcion no lo hace sola;si
+4;los diccionarios en python poseen indice?;no
+5;el caracter $ se utiliza para comentarios;no
+6;se pueden crear funciones con la instruccion lamnda?;si
+7;se pueden inculir strings numeros enteros y flotantes en una misma lista de python?;si
+8;es obligatorio poner un bloque finally despues de un try-except?;no
