@@ -1,21 +1,19 @@
-## Getting Started
+## Descripción
+Este repositorio contiene una colección de ejercicios de programación que he completado como parte de mi desarrollo y aprendizaje continuo en diversas tecnologías y lenguajes de programación. Los ejercicios abarcan desde conceptos básicos hasta temas avanzados, y están organizados por lenguaje y nivel de dificultad.
 
-Welcome to the VS Code Java world. Here is a guideline to help you get started to write Java code in Visual Studio Code.
+## Contenido del Repositorio
+- Lenguajes y Tecnologías:
+  - Python: Ejercicios que cubren desde sintaxis básica hasta estructuras de datos y algoritmos complejos.
+  - Java: Proyectos orientados a objetos, algoritmos, y estructuras de datos.
 
-## Folder Structure
+- Tipos de Ejercicios:
+  - Algoritmos: Implementación de algoritmos clásicos y optimización de código.
+  - Estructuras de Datos: Ejercicios que cubren listas enlazadas, árboles, pilas, colas, entre otros.
+  - Desafíos de Programación: Resolución de problemas en plataformas como LeetCode, HackerRank, etc.
+  - Proyectos Pequeños: Implementación de mini-proyectos para aplicar conocimientos en un contexto más amplio.
 
-The workspace contains two folders by default, where:
+## Contribuciones
+Dado que este repositorio es una forma de demostrar mis experiencia con el lenguaje java y conocimientos sobre conceptos de programación, es posible que sea desprolijo, pero estoy atento a cualquier sugerencia y esta la posibilidad de abrir issues para reportar algun problema
 
-- `src`: the folder to maintain sources
-- `lib`: the folder to maintain dependencies
-
-Meanwhile, the compiled output files will be generated in the `bin` folder by default.
-
-> If you want to customize the folder structure, open `.vscode/settings.json` and update the related settings there.
-
-## Dependency Management
-
-The `JAVA PROJECTS` view allows you to manage your dependencies. More details can be found [here](https://github.com/microsoft/vscode-java-dependency#manage-dependencies).
-
-comando para guardar todo en un zip:
-
+## Contacto
+Si tienes alguna pregunta sobre el repositorio o deseas discutir oportunidades de colaboración, puedes contactarme a través de manuelnuniezz@gmail.com o conectarte conmigo por via [LinkedIn](www.linkedin.com/in/tecmanuelnuñez).
