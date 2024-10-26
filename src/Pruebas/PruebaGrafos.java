@@ -30,15 +30,17 @@ public class PruebaGrafos {
         g.AgregarArista(3, 6, 20);
         //g.AgregarArista(1, 1, 0);
 
-        System.out.println(g.ExisteArista(0, 2));
-        System.out.println(g.ExisteArista(1, 3));
-        System.out.println(g.PesoArista(1, 3));
+        // System.out.println(g.ExisteArista(0, 2));
+        // System.out.println(g.ExisteArista(1, 3));
+        // System.out.println(g.PesoArista(1, 3));
 
-        MetodosGrafo.ImprimirGrafo(g);
+        // MetodosGrafo.ImprimirGrafo(g);
 
-        System.out.println("Camino mas corto de 3 a 2: " + MetodosGrafo.CaminoMasCorto(g, 3, 2));
+        // System.out.println("Camino mas corto de 3 a 2: " + MetodosGrafo.CaminoMasCorto(g, 3, 2));
 
-        System.out.printf("El grafo está topologicamente ordenado %b ", MetodosGrafo.TopoOrdenado(g));
+        // System.out.printf("El grafo está topologicamente ordenado %b ", MetodosGrafo.TopoOrdenado(g));
+        
+        System.out.println(MetodosGrafo.BreadthFirstSearch(g,0,6));
 
         
 

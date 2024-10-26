@@ -1,9 +1,12 @@
 package algoritmos;
 
 import api.GrafoTDA;
+import impl.ColaDinamica;
 import impl.ColaPrioridadHeap;
+import impl.ConjuntoDinamico;
 import impl.DiccionarioSimpleDinamico;
 import api.ColaPrioridadTDA;
+import api.ColaTDA;
 import api.ConjuntoTDA;
 import api.DiccionarioSimpleTDA;
 
@@ -92,4 +95,32 @@ public class MetodosGrafo {
         
         return ordenado;
     }
+
+    public static int BreadthFirstSearch(GrafoTDA g, int nodoInicio, int nodoObjetivo){
+        ColaTDA Q = new ColaDinamica();
+        Q.InicializarCola();
+        ConjuntoTDA visitados = new ConjuntoDinamico();
+        ConjuntoTDA vecindario = g.NodosVecinos(nodoInicio);
+        Q.Acolar(nodoInicio);
+        visitados.Agregar(nodoInicio);
+        while (!Q.ColaVacia()) {
+            int v = Q.PrimerElemento();
+            Q.Desacolar();
+            if (nodoObjetivo == v) {
+                return v;
+            }
+            vecindario = g.NodosVecinos(v);
+            while (!vecindario.ConjuntoVacio()) {
+                int u=vecindario.Elegir();
+                vecindario.Sacar(u);
+                if (!visitados.Pertenece(u)) {
+                    Q.Acolar(u);
+                    visitados.Agregar(u);
+                }
+            }
+        } 
+        return -1;
+    }
 }
+
+
