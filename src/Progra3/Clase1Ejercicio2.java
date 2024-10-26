@@ -1,4 +1,3 @@
-package Progra3;
 
 public class Clase1Ejercicio2 {
 
