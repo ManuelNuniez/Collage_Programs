@@ -1,25 +1,32 @@
 package impl.Huffman;
 
+import java.util.PriorityQueue;
+
 import api.ArbolBBTDA;
+import impl.ArbolBB;
 
 public class HuffmanAlgoritm {
 
-    PriorityQueueTDA huffmanQueue;
+    PriorityQueue<Symbol> huffmanQueue;
     ArbolBBTDA huffmanTree;
 
     //Constructor
     public HuffmanAlgoritm(Symbol[] alphabet){
+        huffmanTree = new ArbolBB();
+        huffmanQueue = new PriorityQueue<>( new SymbolProbabilityComparator());
         for (Symbol symbol : alphabet) {
-            huffmanQueue.AddValue(symbol);
+            huffmanQueue.add(symbol);
         }
         
         for(int i = 1; i< alphabet.length; i++){
-            Symbol x = huffmanQueue.ExtractValue();
-            Symbol y = huffmanQueue.ExtractValue();
-            huffmanTree.AgregarElem(x.probabilty + y.probabilty);
-            huffmanTree.AgregarElem(x.probabilty);
-            huffmanTree.AgregarElem(y.probabilty);
+            Symbol x = huffmanQueue.remove();
+            Symbol y = huffmanQueue.remove();
+            huffmanTree.AgregarElem(x.getProbability() + y.getProbability());
+            huffmanTree.AgregarElem(x.getProbability());
+            huffmanTree.AgregarElem(y.getProbability());
+            huffmanQueue.add(new Symbol(x.getProbability() + y.getProbability()));
         }
+        System.out.println("todo ok");
     }
 
     public String GetCode(char character){

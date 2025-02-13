@@ -6,7 +6,7 @@ public class ArbolBB implements ArbolBBTDA {
     NodoABB raiz;
 
     @Override
-    public int Raiz() {
+    public double Raiz() {
         return raiz.Info;
     }
 
@@ -31,7 +31,7 @@ public class ArbolBB implements ArbolBBTDA {
     }
 
     @Override
-    public void AgregarElem(int x) {
+    public void AgregarElem(double x) {
         if (raiz == null){
             raiz = new NodoABB();
             raiz.Info = x;
@@ -47,7 +47,7 @@ public class ArbolBB implements ArbolBBTDA {
     }
 
     @Override
-    public void EliminarElem(int x) {
+    public void EliminarElem(double x) {
         if (raiz != null) {
             if (raiz.Info == x && raiz.HijoIzq.ArbolVacio() &&
                 raiz.HijoDer.ArbolVacio()) {
@@ -72,7 +72,7 @@ public class ArbolBB implements ArbolBBTDA {
         }
     }
 
-    private int mayor(ArbolBBTDA a){
+    private double mayor(ArbolBBTDA a){
         if (a.HijoDer().ArbolVacio())
             return a.Raiz();
         else
@@ -80,7 +80,7 @@ public class ArbolBB implements ArbolBBTDA {
     
     }
 
-    private int menor(ArbolBBTDA a){
+    private double menor(ArbolBBTDA a){
         if (a.HijoIzq().ArbolVacio())
             return a.Raiz();
         else

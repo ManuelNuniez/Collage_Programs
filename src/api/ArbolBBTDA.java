@@ -1,12 +1,12 @@
 package api;
 
 public interface ArbolBBTDA {
-    int Raiz();
+    double Raiz();
     ArbolBBTDA HijoIzq();
     ArbolBBTDA HijoDer();
     boolean ArbolVacio();
     void InicializarArbol();
-    void AgregarElem(int x);
-    void EliminarElem(int x);
+    void AgregarElem(double x);
+    void EliminarElem(double x);
 
 }
