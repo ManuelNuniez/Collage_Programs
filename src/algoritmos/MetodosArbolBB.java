@@ -39,7 +39,7 @@ public class MetodosArbolBB {
         }
     }
 
-    public static int CalcularProfundidad(ArbolBBTDA t, int x){
+    public static int CalcularProfundidad(ArbolBBTDA t, double x){
         if (t.ArbolVacio()) {
             return 0;
         }else if (t.Raiz()==x) {
@@ -51,7 +51,7 @@ public class MetodosArbolBB {
         }
     }
 
-    public static boolean existeElementoEnABB(ArbolBBTDA t, int x){
+    public static boolean existeElementoEnABB(ArbolBBTDA t, double x){
         if (t.ArbolVacio()){
              return false ;
         }
@@ -91,7 +91,7 @@ public class MetodosArbolBB {
         return r;
     }
 
-    public static boolean EsHoja(ArbolBBTDA a, int valor){
+    public static boolean EsHoja(ArbolBBTDA a, double valor){
         
         if (a.ArbolVacio()){
             return false ;
@@ -178,7 +178,7 @@ public class MetodosArbolBB {
         }
     }
 
-    public static ConjuntoTDA ElementosMayores(ArbolBBTDA a, int val){
+    public static ConjuntoTDA ElementosMayores(ArbolBBTDA a, double val){
         ConjuntoTDA conj = new ConjuntoDinamico();
         conj.InicializarConjunto();
 
@@ -203,7 +203,7 @@ public class MetodosArbolBB {
         return conj;
     }
 
-    public static ConjuntoTDA ElementosMenores(ArbolBBTDA a, int val){
+    public static ConjuntoTDA ElementosMenores(ArbolBBTDA a, double val){
         ConjuntoTDA conj = new ConjuntoDinamico();
         conj.InicializarConjunto();
 
@@ -229,7 +229,7 @@ public class MetodosArbolBB {
         return conj;
     }
 
-    public static int PadreInmediato(ArbolBBTDA a, int valor) {
+    public static int PadreInmediato(ArbolBBTDA a, double valor) {
         if (a.ArbolVacio()) {
             return -1; // Devuelve un valor que indique que el padre no se encontró.
         }
@@ -273,7 +273,7 @@ public class MetodosArbolBB {
     }
 
 
-    public static void AncestroComun(ArbolBBTDA a,int menor, int mayor){
+    public static void AncestroComun(ArbolBBTDA a,double menor, double mayor){
         if (a.Raiz() >= menor && a.Raiz() <= mayor) {
             System.out.println(a.Raiz());
         }

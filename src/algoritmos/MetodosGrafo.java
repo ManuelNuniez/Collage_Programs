@@ -1,10 +1,11 @@
 package algoritmos;
-
+import java.lang.*;
 import api.GrafoTDA;
 import impl.ColaDinamica;
 import impl.ColaPrioridadHeap;
 import impl.ConjuntoDinamico;
 import impl.DiccionarioSimpleDinamico;
+import impl.Grafos.Grafo;
 import api.ColaPrioridadTDA;
 import api.ColaTDA;
 import api.ConjuntoTDA;
@@ -32,68 +33,30 @@ public class MetodosGrafo {
         }
     }
     
-    public static int CaminoMasCorto(GrafoTDA grafo, int origen, int destino){
+    public static void Dijkstra(GrafoTDA grafo, int origen){
+        ConjuntoTDA visitados = new ConjuntoDinamico();
+        visitados.InicializarConjunto(); 
+        visitados.Agregar(origen);
 
-        DiccionarioSimpleTDA caminos = new DiccionarioSimpleDinamico();
-        caminos.InicializarDiccionario();
+        ConjuntoTDA candidatos = new ConjuntoDinamico();
+        candidatos.InicializarConjunto();
+        candidatos = grafo.Vertices();
+        candidatos.Sacar(origen);
 
-        ColaPrioridadTDA colaPrioridad = new ColaPrioridadHeap();
-        colaPrioridad.InicializarCola(false);
-
-        colaPrioridad.Acolar(origen, 0);
-
-        while (!colaPrioridad.ColaVacia()) {
-            int vertice = colaPrioridad.PrimerElemento();
-            int peso = colaPrioridad.Prioridad();
-            colaPrioridad.Desacolar();
-
-            if (!caminos.Claves().Pertenece(vertice)) {
-                caminos.Agregar(vertice, peso);
-
-                ConjuntoTDA adyacentes = grafo.NodosVecinos(vertice);
-                while (!adyacentes.ConjuntoVacio()) {
-                    int adyacente = adyacentes.Elegir();
-                    adyacentes.Sacar(adyacente);
-
-                    if (!caminos.Claves().Pertenece(adyacente)) {
-                        int pesoArista = grafo.PesoArista(vertice, adyacente);
-                        colaPrioridad.Acolar(adyacente, peso + pesoArista);
-                    }
+        while (!candidatos.ConjuntoVacio()) {
+            Integer min = Integer.MAX_VALUE;
+            ConjuntoTDA aux = MetodosConjunto.CopiarConjunto(candidatos);
+            while (!aux.ConjuntoVacio()) {
+                int u = aux.Elegir();
+                aux.Sacar(u);
+                if (grafo.ExisteArista(origen,u) && grafo.PesoArista(origen,u) < min) {
+                    min = grafo.PesoArista(origen, u);
+                    int w = u;
                 }
             }
         }
 
-        if (caminos.Claves().Pertenece(destino)) {
-            return caminos.Recuperar(destino);
-        }else{
-            return -1;
-        }
         
-
-    }
-
-    public static boolean TopoOrdenado(GrafoTDA g){
-        ConjuntoTDA vertices = g.Vertices();
-        boolean ordenado = true;
-        int verticeActual;
-        int vecinoActual;
-        
-        while (ordenado && !vertices.ConjuntoVacio()) {
-            verticeActual = vertices.Elegir();
-            vertices.Sacar(verticeActual);
-
-            ConjuntoTDA vecinos = g.NodosVecinos(verticeActual);
-            while (!vecinos.ConjuntoVacio()) {
-                vecinoActual = vecinos.Elegir();
-                vecinos.Sacar(vecinoActual);
-                
-                if (vecinoActual < verticeActual) {
-                    ordenado = false;
-                }
-            }
-        }
-        
-        return ordenado;
     }
 
     public static int BreadthFirstSearch(GrafoTDA g, int nodoInicio, int nodoObjetivo){

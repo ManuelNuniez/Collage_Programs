@@ -26,7 +26,7 @@ public class HuffmanAlgoritm {
             huffmanTree.AgregarElem(y.getProbability());
             huffmanQueue.add(new Symbol(x.getProbability() + y.getProbability()));
         }
-        System.out.println("todo ok");
+
     }
 
     public String GetCode(char character){
